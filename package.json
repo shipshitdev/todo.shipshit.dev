@@ -1,0 +1,46 @@
+{
+  "description": "Full-stack task management application with cross-platform support",
+  "devDependencies": {
+    "@biomejs/biome": "2.3.11",
+    "@playwright/test": "1.57.0",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.1",
+    "@vitejs/plugin-react": "5.1.2",
+    "@vitest/coverage-v8": "4.0.16",
+    "husky": "9.1.7",
+    "jsdom": "27.4.0",
+    "lint-staged": "16.2.7",
+    "vitest": "4.0.16"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css}": [
+      "bunx biome check --write"
+    ]
+  },
+  "name": "taskflow.com",
+  "packageManager": "bun@latest",
+  "private": true,
+  "scripts": {
+    "build": "bun run --cwd apps/api build && bun run --cwd apps/web build",
+    "dev": "bun run --cwd apps/api dev & bun run --cwd apps/web dev",
+    "dev:api": "bun run --cwd apps/api dev",
+    "dev:desktop": "bun run --cwd apps/desktop dev",
+    "dev:mobile": "bun run --cwd apps/mobile start",
+    "dev:web": "bun run --cwd apps/web dev",
+    "format": "biome format --write .",
+    "format:check": "biome format --check .",
+    "lint": "bun --filter '*' run lint",
+    "pre:install": "bun update --latest --recursive && bun install",
+    "prepare": "husky",
+    "prepare:deploy": "bun install",
+    "start": "bun --filter '*' run start",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest"
+  },
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Todoist Clone",
+    "slug": "todoist-clone",
+    "version": "1.0.0",
+    "scheme": "todoist-clone",
+    "platforms": ["ios", "android"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.todoistclone.app"
+    },
+    "android": {
+      "package": "com.todoistclone.app"
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
+
