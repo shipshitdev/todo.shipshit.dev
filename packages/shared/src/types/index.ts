@@ -8,6 +8,28 @@ export enum TaskPriority {
 export enum ViewMode {
   LIST = 'list',
   KANBAN = 'kanban',
+  TIMELINE = 'timeline',
+}
+
+export enum ProjectStatus {
+  IDEA = 'idea',
+  PLANNING = 'planning',
+  IN_PROGRESS = 'in-progress',
+  TESTING = 'testing',
+  LAUNCHED = 'launched',
+  DISTRIBUTED = 'distributed',
+  PAUSED = 'paused',
+  ABANDONED = 'abandoned',
+}
+
+export enum ProjectCategory {
+  SIDE_PROJECT = 'side-project',
+  MONEY_MAKER = 'money-maker',
+  TOOL = 'tool',
+  OSS = 'oss',
+  FAMILY = 'family',
+  EXPERIMENT = 'experiment',
+  OTHER = 'other',
 }
 
 export interface Task {
@@ -30,8 +52,17 @@ export interface Task {
 export interface Project {
   id: string;
   name: string;
+  description?: string;
   color?: string;
   icon?: string;
+  status: ProjectStatus;
+  category: ProjectCategory;
+  progress: number; // 0-100 percentage
+  startDate?: Date | string;
+  targetLaunchDate?: Date | string;
+  launchedAt?: Date | string;
+  distributionChannels?: string[];
+  tags?: string[];
   order: number;
   userId: string;
   createdAt: Date | string;
@@ -79,14 +110,29 @@ export interface UpdateTaskDto {
 
 export interface CreateProjectDto {
   name: string;
+  description?: string;
   color?: string;
   icon?: string;
+  status?: ProjectStatus;
+  category?: ProjectCategory;
+  startDate?: Date | string;
+  targetLaunchDate?: Date | string;
+  tags?: string[];
 }
 
 export interface UpdateProjectDto {
   name?: string;
+  description?: string;
   color?: string;
   icon?: string;
+  status?: ProjectStatus;
+  category?: ProjectCategory;
+  progress?: number;
+  startDate?: Date | string | null;
+  targetLaunchDate?: Date | string | null;
+  launchedAt?: Date | string | null;
+  distributionChannels?: string[];
+  tags?: string[];
   order?: number;
 }
 

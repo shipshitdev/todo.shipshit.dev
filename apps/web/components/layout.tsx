@@ -2,7 +2,7 @@
 
 import { Button } from '@agenticindiedev/ui';
 import { UserButton, useUser } from '@clerk/nextjs';
-import { Calendar, History, Inbox, LayoutDashboard, Target } from 'lucide-react';
+import { Calendar, GanttChart, History, Inbox, LayoutDashboard, Target } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import SidebarProjects from './sidebar-projects';
@@ -11,6 +11,7 @@ const navigation = [
   { name: 'Today', href: '/today', icon: LayoutDashboard },
   { name: 'Inbox', href: '/inbox', icon: Inbox },
   { name: 'Upcoming', href: '/upcoming', icon: Calendar },
+  { name: 'Timeline', href: '/timeline', icon: GanttChart },
   { name: 'Goals', href: '/goals', icon: Target },
   { name: 'History', href: '/history', icon: History },
 ];

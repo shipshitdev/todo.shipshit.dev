@@ -1,8 +1,8 @@
 'use client';
 
 import { useApi } from '@/hooks/use-api';
-import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Label } from '@agenticindiedev/ui';
-import { CreateProjectDto } from '@todoist/shared';
+import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Textarea } from '@agenticindiedev/ui';
+import { CreateProjectDto, ProjectStatus, ProjectCategory } from '@todoist/shared';
 import { useState } from 'react';
 
 interface ProjectFormProps {
@@ -10,10 +10,36 @@ interface ProjectFormProps {
   onSuccess: () => void;
 }
 
+const STATUS_OPTIONS = [
+  { value: ProjectStatus.IDEA, label: 'Idea' },
+  { value: ProjectStatus.PLANNING, label: 'Planning' },
+  { value: ProjectStatus.IN_PROGRESS, label: 'In Progress' },
+  { value: ProjectStatus.TESTING, label: 'Testing' },
+  { value: ProjectStatus.LAUNCHED, label: 'Launched' },
+  { value: ProjectStatus.DISTRIBUTED, label: 'Distributed' },
+  { value: ProjectStatus.PAUSED, label: 'Paused' },
+  { value: ProjectStatus.ABANDONED, label: 'Abandoned' },
+];
+
+const CATEGORY_OPTIONS = [
+  { value: ProjectCategory.SIDE_PROJECT, label: 'Side Project' },
+  { value: ProjectCategory.MONEY_MAKER, label: 'Money Maker' },
+  { value: ProjectCategory.TOOL, label: 'Tool' },
+  { value: ProjectCategory.OSS, label: 'Open Source' },
+  { value: ProjectCategory.FAMILY, label: 'Family' },
+  { value: ProjectCategory.EXPERIMENT, label: 'Experiment' },
+  { value: ProjectCategory.OTHER, label: 'Other' },
+];
+
 export default function ProjectForm({ onClose, onSuccess }: ProjectFormProps) {
   const { projects: projectsApi } = useApi();
   const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [color, setColor] = useState('#3b82f6');
+  const [status, setStatus] = useState<ProjectStatus>(ProjectStatus.IDEA);
+  const [category, setCategory] = useState<ProjectCategory>(ProjectCategory.SIDE_PROJECT);
+  const [startDate, setStartDate] = useState('');
+  const [targetLaunchDate, setTargetLaunchDate] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,7 +48,15 @@ export default function ProjectForm({ onClose, onSuccess }: ProjectFormProps) {
 
     try {
       setLoading(true);
-      const createData: CreateProjectDto = { name, color };
+      const createData: CreateProjectDto = {
+        name,
+        description: description || undefined,
+        color,
+        status,
+        category,
+        startDate: startDate || undefined,
+        targetLaunchDate: targetLaunchDate || undefined,
+      };
       await projectsApi.create(createData);
       onSuccess();
     } catch (error) {
@@ -35,7 +69,7 @@ export default function ProjectForm({ onClose, onSuccess }: ProjectFormProps) {
 
   return (
     <Dialog open={true} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent>
+      <DialogContent className="max-w-lg">
         <DialogHeader>
           <DialogTitle>New Project</DialogTitle>
         </DialogHeader>
@@ -46,8 +80,76 @@ export default function ProjectForm({ onClose, onSuccess }: ProjectFormProps) {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder="My awesome project"
               required
             />
+          </div>
+
+          <div>
+            <Label htmlFor="description">Description</Label>
+            <Textarea
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="What's this project about?"
+              rows={2}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="status">Status</Label>
+              <Select value={status} onValueChange={(v) => setStatus(v as ProjectStatus)}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {STATUS_OPTIONS.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Label htmlFor="category">Category</Label>
+              <Select value={category} onValueChange={(v) => setCategory(v as ProjectCategory)}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {CATEGORY_OPTIONS.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="startDate">Start Date</Label>
+              <Input
+                id="startDate"
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="targetLaunchDate">Target Launch</Label>
+              <Input
+                id="targetLaunchDate"
+                type="date"
+                value={targetLaunchDate}
+                onChange={(e) => setTargetLaunchDate(e.target.value)}
+              />
+            </div>
           </div>
 
           <div>
@@ -69,12 +171,12 @@ export default function ProjectForm({ onClose, onSuccess }: ProjectFormProps) {
             </div>
           </div>
 
-          <div className="flex justify-end gap-2">
+          <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onClose}>
               Cancel
             </Button>
             <Button type="submit" disabled={loading}>
-              {loading ? 'Creating...' : 'Create'}
+              {loading ? 'Creating...' : 'Create Project'}
             </Button>
           </div>
         </form>

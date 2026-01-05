@@ -1,7 +1,28 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import type { Document } from 'mongoose';
 
 export type ProjectDocument = Project & Document;
+
+export const PROJECT_STATUSES = [
+  'idea',
+  'planning',
+  'in-progress',
+  'testing',
+  'launched',
+  'distributed',
+  'paused',
+  'abandoned',
+] as const;
+
+export const PROJECT_CATEGORIES = [
+  'side-project',
+  'money-maker',
+  'tool',
+  'oss',
+  'family',
+  'experiment',
+  'other',
+] as const;
 
 @Schema({ timestamps: true })
 export class Project {
@@ -9,10 +30,37 @@ export class Project {
   name: string;
 
   @Prop()
+  description?: string;
+
+  @Prop()
   color?: string;
 
   @Prop()
   icon?: string;
+
+  @Prop({ required: true, default: 'idea', enum: PROJECT_STATUSES })
+  status: string;
+
+  @Prop({ required: true, default: 'side-project', enum: PROJECT_CATEGORIES })
+  category: string;
+
+  @Prop({ required: true, default: 0, min: 0, max: 100 })
+  progress: number;
+
+  @Prop()
+  startDate?: Date;
+
+  @Prop()
+  targetLaunchDate?: Date;
+
+  @Prop()
+  launchedAt?: Date;
+
+  @Prop({ type: [String], default: [] })
+  distributionChannels?: string[];
+
+  @Prop({ type: [String], default: [] })
+  tags?: string[];
 
   @Prop({ required: true, default: 0 })
   order: number;
@@ -23,3 +71,13 @@ export class Project {
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);
 
+// Transform _id to id in JSON output
+ProjectSchema.set('toJSON', {
+  virtuals: true,
+  transform: (_, ret) => {
+    ret.id = ret._id.toString();
+    delete ret._id;
+    delete ret.__v;
+    return ret;
+  },
+});
