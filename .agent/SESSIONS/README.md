@@ -1,7 +1,7 @@
 # Sessions
 
 **Purpose:** Daily session documentation for AI continuity.
-**Last Updated:** 2025-12-31
+**Last Updated:** 2026-01-09
 
 ---
 
@@ -48,7 +48,7 @@ Add session entry with:
 
 ## Recent Sessions
 
-- [2025-12-31](./2025-12-31.md) - 16 sessions: Agent folder init, linter migration, bot UI overhaul, strategy builder, BotService split, platform authentication
+<!-- Quick links to recent sessions -->
 
 ---
 

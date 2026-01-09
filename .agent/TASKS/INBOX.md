@@ -1,14 +1,36 @@
-# Task Inbox - TaskFlow.com
+# Task Inbox
 
-**Purpose:** Quick capture for tasks. Process regularly into proper task files or complete immediately.
-**Last Updated:** 2025-12-31
-
----
-
-## Quick Tasks
-
-<!-- Add quick tasks here, then process into proper task files -->
+**Purpose:** Quick capture for tasks. Process regularly.
+**Last Updated:** 2026-01-09
 
 ---
 
-**Process inbox regularly.**
+## How to Use
+
+Add tasks here quickly. Format:
+
+```
+- [ ] Task description @priority @due
+```
+
+Process into proper task files or complete directly.
+
+---
+
+## Inbox
+
+<!-- Add quick tasks below -->
+
+- [ ] Review and customize `.agent/SYSTEM/RULES.md`
+- [ ] Update `.agent/SYSTEM/ARCHITECTURE.md` with project architecture
+- [ ] Add project-specific rules to `SYSTEM/critical/CRITICAL-NEVER-DO.md`
+
+---
+
+## Processed
+
+<!-- Move completed/processed items here with date -->
+
+### 2026-01-09
+
+- [x] Initial `.agent/` setup complete

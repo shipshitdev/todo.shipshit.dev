@@ -1,7 +1,7 @@
 # Cross-Project Rules
 
 **Purpose:** Rules that apply across all projects in this workspace.
-**Last Updated:** 2025-12-31
+**Last Updated:** 2026-01-09
 
 ---
 

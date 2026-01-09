@@ -10,7 +10,7 @@
    - `../critical/CRITICAL-NEVER-DO.md`
 
 2. **Check today's session file:**
-   - `../../SESSIONS/2025-12-31.md` (if exists, read it first)
+   - `../../SESSIONS/2026-01-09.md` (if exists, read it first)
 
 3. **Review recent context:**
    - Last 2-3 session files for context

@@ -1,7 +1,7 @@
-# Coding Rules - PredictHunter
+# Coding Rules - TaskFlow
 
 **Purpose:** Coding standards and patterns for this project.
-**Last Updated:** 2025-12-31
+**Last Updated:** 2026-01-09
 
 ---
 

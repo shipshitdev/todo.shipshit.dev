@@ -2,7 +2,7 @@
 
 **Purpose:** Quick reference for violations that break builds, lose data, or violate architecture.
 **Read this FIRST before making ANY changes.**
-**Last Updated:** 2025-12-31
+**Last Updated:** 2026-01-09
 
 ---
 
