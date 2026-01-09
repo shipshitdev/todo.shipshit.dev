@@ -5,7 +5,7 @@ import { format, addDays, startOfWeek, endOfWeek, isSameDay } from 'date-fns';
 import { useApi } from '@/hooks/use-api';
 import { Task } from '@todoist/shared';
 import TaskList from '@/components/task-list';
-import { Card, CardContent, CardHeader } from '@agenticindiedev/ui';
+import { Card, CardContent, CardHeader } from '@shipshitdev/ui';
 
 export default function UpcomingPage() {
   const { tasks: tasksApi } = useApi();

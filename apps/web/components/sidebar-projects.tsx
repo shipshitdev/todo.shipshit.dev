@@ -1,7 +1,7 @@
 'use client';
 
 import { useApi } from '@/hooks/use-api';
-import { Button, Input } from '@agenticindiedev/ui';
+import { Button, Input } from '@shipshitdev/ui';
 import { Project, Task } from '@todoist/shared';
 import { ChevronDown, ChevronRight, Plus } from 'lucide-react';
 import Link from 'next/link';

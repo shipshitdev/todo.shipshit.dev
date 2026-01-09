@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Goal } from '@todoist/shared';
-import { Card, CardContent, CardHeader } from '@agenticindiedev/ui';
-import { Button } from '@agenticindiedev/ui';
+import { Card, CardContent, CardHeader } from '@shipshitdev/ui';
+import { Button } from '@shipshitdev/ui';
 import { Target, Edit, Trash2, ChevronDown, ChevronUp, CheckCircle2, Circle, Calendar } from 'lucide-react';
 import MilestoneItem from './milestone-item';
 

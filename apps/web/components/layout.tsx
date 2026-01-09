@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@agenticindiedev/ui';
+import { Button } from '@shipshitdev/ui';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { Calendar, GanttChart, History, Inbox, LayoutDashboard, Target } from 'lucide-react';
 import Link from 'next/link';

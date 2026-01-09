@@ -1,7 +1,7 @@
 'use client';
 
 import { useApi } from '@/hooks/use-api';
-import { Button, Checkbox, Input } from '@agenticindiedev/ui';
+import { Button, Checkbox, Input } from '@shipshitdev/ui';
 import { formatTaskDueDate, isOverdue, Task } from '@todoist/shared';
 import { Edit, Trash2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';

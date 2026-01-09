@@ -1,7 +1,7 @@
 'use client';
 
 import { useApi } from '@/hooks/use-api';
-import { Input } from '@agenticindiedev/ui';
+import { Input } from '@shipshitdev/ui';
 import { CreateTaskDto, TaskPriority } from '@todoist/shared';
 import { Plus } from 'lucide-react';
 import { useRef, useState } from 'react';

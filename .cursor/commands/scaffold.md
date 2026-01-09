@@ -8,7 +8,7 @@ This command provides a unified way to scaffold:
 
 - `.agent/` folder structure for AI-first development
 - Backend (NestJS) with MongoDB, Swagger, and best practices
-- Frontend (NextJS) with Tailwind, @agenticindiedev/ui, and TypeScript
+- Frontend (NextJS) with Tailwind, @shipshitdev/ui, and TypeScript
 - Mobile (Expo) with React Native and Expo Router
 - Browser Extension (Plasmo) with React and Tailwind
 

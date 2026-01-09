@@ -1,7 +1,7 @@
 @use 'tailwindcss';
-@use '@agenticindiedev/ui/themes/dark' as *;
+@use '@shipshitdev/ui/themes/dark' as *;
 
-@source '../../../node_modules/@agenticindiedev/ui/dist/**/*.{js,cjs}';
+@source '../../../node_modules/@shipshitdev/ui/dist/**/*.{js,cjs}';
 
 @theme {
   --color-background: hsl(var(--background));

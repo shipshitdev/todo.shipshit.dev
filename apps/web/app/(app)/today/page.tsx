@@ -5,7 +5,7 @@ import QuickAddTask from '@/components/quick-add-task';
 import TaskForm from '@/components/task-form';
 import TaskList from '@/components/task-list';
 import { useApi } from '@/hooks/use-api';
-import { Button } from '@agenticindiedev/ui';
+import { Button } from '@shipshitdev/ui';
 import { Task, ViewMode } from '@todoist/shared';
 import { format } from 'date-fns';
 import { LayoutGrid, List, Plus } from 'lucide-react';

@@ -16,7 +16,7 @@ TaskFlow is a full-featured task management application that replicates Todoist'
 
 | Platform | Tech Stack | Status |
 |----------|------------|--------|
-| **Web** | Next.js 14, React, Tailwind, @agenticindiedev/ui | 70% |
+| **Web** | Next.js 14, React, Tailwind, @shipshitdev/ui | 70% |
 | **Mobile** | Expo (React Native), Clerk auth | 20% |
 | **API** | NestJS, MongoDB, Clerk | 90% |
 | **Desktop** | Electron (wrapping web) | Scaffolded |

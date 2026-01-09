@@ -2,7 +2,7 @@
 
 import TaskList from '@/components/task-list';
 import { useApi } from '@/hooks/use-api';
-import { Button } from '@agenticindiedev/ui';
+import { Button } from '@shipshitdev/ui';
 import { Task } from '@todoist/shared';
 import { useEffect, useState, useCallback } from 'react';
 

@@ -8,7 +8,7 @@ import TaskList from '@/components/task-list';
 import KanbanBoard from '@/components/kanban-board';
 import TaskForm from '@/components/task-form';
 import QuickAddTask from '@/components/quick-add-task';
-import { Button } from '@agenticindiedev/ui';
+import { Button } from '@shipshitdev/ui';
 import { Plus, List, LayoutGrid, ArrowLeft } from 'lucide-react';
 
 export default function ProjectPage() {

@@ -22,7 +22,7 @@ A complete task management application with cross-platform support (Web, Mobile,
 ## Tech Stack
 
 - **Package Manager**: Bun
-- **Web**: Next.js 16+, React 19, TypeScript, Tailwind CSS, @agenticindiedev/ui
+- **Web**: Next.js 16+, React 19, TypeScript, Tailwind CSS, @shipshitdev/ui
 - **Mobile**: Expo ~52, React Native 0.76, Expo Router
 - **Desktop**: Electron
 - **Backend**: NestJS 11+, MongoDB, Mongoose

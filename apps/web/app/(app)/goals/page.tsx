@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useApi } from '@/hooks/use-api';
 import { Goal, GoalCategory } from '@todoist/shared';
-import { Button } from '@agenticindiedev/ui';
+import { Button } from '@shipshitdev/ui';
 import { Plus, Target, TrendingUp } from 'lucide-react';
 import GoalForm from '@/components/goal-form';
 import GoalCard from '@/components/goal-card';

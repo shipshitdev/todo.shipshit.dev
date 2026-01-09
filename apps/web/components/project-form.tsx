@@ -1,7 +1,7 @@
 'use client';
 
 import { useApi } from '@/hooks/use-api';
-import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Textarea } from '@agenticindiedev/ui';
+import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Textarea } from '@shipshitdev/ui';
 import { CreateProjectDto, ProjectStatus, ProjectCategory } from '@todoist/shared';
 import { useState } from 'react';
 

@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 import path from 'path';
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@agenticindiedev/ui', '@todoist/shared'],
+  transpilePackages: ['@shipshitdev/ui', '@todoist/shared'],
   experimental: {
     // Resolve symlinks for workspace packages
     externalDir: true,
@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
       '@todoist/shared': path.resolve(__dirname, '../../packages/shared/src'),
     };
 
-    // Configure sass-loader to resolve @agenticindiedev/ui package imports
+    // Configure sass-loader to resolve @shipshitdev/ui package imports
     const rules = config.module.rules;
     const scssRule = rules.find(
       (rule: unknown) =>

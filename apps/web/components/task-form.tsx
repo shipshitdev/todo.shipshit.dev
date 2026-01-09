@@ -1,7 +1,7 @@
 'use client';
 
 import { useApi } from '@/hooks/use-api';
-import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Label } from '@agenticindiedev/ui';
+import { Button, Dialog, DialogContent, DialogHeader, DialogTitle, Input, Label } from '@shipshitdev/ui';
 import * as Select from '@radix-ui/react-select';
 import { CreateTaskDto, Project, Task, TaskPriority, UpdateTaskDto } from '@todoist/shared';
 import { useCallback, useEffect, useState } from 'react';
